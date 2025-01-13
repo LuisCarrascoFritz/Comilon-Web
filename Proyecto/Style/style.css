@@ -1,0 +1,17 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #967551;
+    padding: 10px 20px;
+    
+}
+.platillos {
+    display: block;
+    width: 200px;
+    height: 250px;
+  }
+#imgPlatillos{
+    display: flex;
+    justify-content: center;
+}
