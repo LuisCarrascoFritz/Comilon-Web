@@ -1,10 +1,11 @@
 document.getElementById('reservaForm').addEventListener('submit', function(event) {
 
+    const rut = document.getElementById('rut').value;
     const fecha = document.getElementById('fecha').value;
     const hora = document.getElementById('hora').value;
     const comensales = document.getElementById('comensales').value;
 
-    if (!fecha || !hora || !comensales) {
+    if (!rut || !fecha || !hora || !comensales) {
         alert("Por favor, completa todos los campos.");
         return;
     }
