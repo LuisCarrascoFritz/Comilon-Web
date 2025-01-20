@@ -107,9 +107,9 @@
   margin: 0px 0px;
 }
 .Datos-pagina img{
-  width: 615px;
-  height: 500px;
-  border-radius: 50%;
+  width: 768px;
+  height: 646px;
+  border-radius: 18%;
   margin: 20px;
   
 }
@@ -140,5 +140,18 @@
 .Datos-pagina button:active {
     transform: scale(0.95); /* Reduce ligeramente el tamaño al hacer clic */
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2); /* Ajusta la sombra al presionar */
+}
+
+.Datos-pagina p {
+  font-size: 20px; /* Tamaño del texto */
+  line-height: 1.8; /* Espaciado entre líneas para mayor legibilidad */
+  font-family: 'Times New Roman', Times, serif; /* Fuente personalizada */
+  background-color: #FFE1C2; /* Color de fondo */
+  color: #393F41; /* Color de texto */
+  margin: 25px 50px; /* Márgenes alrededor */
+  padding: 15px; /* Espaciado interno */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+  text-align: justify; /* Alineación del texto a la izquierda y derecha */
 }
 
