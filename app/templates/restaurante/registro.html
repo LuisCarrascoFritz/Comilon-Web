@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El comilón</title>
+    <link rel="stylesheet" href="../static/css/style.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+</head>
+<body>
+  <nav class="Menu">
+    <ul>
+      <div><li><img src="../static/img/LogoV2.png" alt="Logo"></li></div>
+      <li><a href="home">Inicio</a></li>
+      <li><a href="reserva">Reservar Mesa</a></li>
+      <li><a href="platillos">Platillos</a></li>
+      <li><a href="soporte">Soporte</a></li>
+      <li><a href="registro">Registrarse</a></li>
+      <li><a href="inicioSesion">Inicio de sesión</a></li>
+   </ul>
+</nav>
+  <form id="registrarse">
+    <section class="formulario">
+        <ul class="Card col-12 mx-auto">
+          <h2>REGISTRO</h2>
+        <div>
+          <p>Ingrese su nombre completo*</p>
+        </div>
+        <div class="col-8 mx-auto">
+          <input type="text" id="nombre" name="nombreUsuario" placeholder="Ingrese su nombre completo" required>
+          <label for="nombre">*</label>
+        </div>
+        <div >
+          <p>Ingrese su correo electronico*</p>
+        </div>
+        <div class="col-8 mx-auto">
+          <input type="email" id="correo" name="correoUsuario" placeholder="Ingrese su correo electronico" required>
+          <label for="correo">*</label>
+        </div>
+        <div>
+          <p>Ingrese su contraseña</p>
+        </div>
+        <div class="col-8 mx-auto">
+          <input type="password" id="contraseña" placeholder="Contraseña*" required>
+          <label for="contraseña">*</label>
+        </div>
+        <div>
+          <p>Vuelva a ingresar la misma contraseña</p>
+        </div>
+        <div class="col-8 mx-auto">
+          <input type="password" id="contraseña2" placeholder="De nuevo tu Contraseña*" required>
+          <label for="contraseña">*</label>
+        </div class="col-8 mx-auto">
+        <p class="mt-4">Ya estas registrado? <a href="inicioSesion" >Iniciar sesión</a></p>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button id="completarFormulario" type="submit">Crear cuenta</button>
+      </ul>
+    </section>
+  </form>
+  <script src="../static/js/registrarse.js"></script>
+</body>
+</html>
