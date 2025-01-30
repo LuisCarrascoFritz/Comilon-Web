@@ -22,42 +22,42 @@
       <li><a href="inicioSesion">Inicio de sesión</a></li>
   </ul>
 </nav>
-<form id="iniciarSesion">
+<form id="iniciarSesion" method="POST" action="{% url 'subirProducto' %}">
+  {% csrf_token %}
+  
+  <!-- 🔹 Aquí se mostrarán los mensajes de error -->
+  {% if messages %}
+  <div class="alert alert-danger">
+      {% for message in messages %}
+          <p>{{ message }}</p>
+      {% endfor %}
+  </div>
+  {% endif %}
+
   <section class="formulario">
     <ul class="Card col-12 mx-auto">
       <h2>INICIO DE SESIÓN</h2>
 
       <div>
-        <p>Ingrese su correo electrónico*</p>
+        <p>Ingrese su nombre de usuario*</p>
       </div>
       <div class="col-8 mx-auto">
-        <input type="email" id="typeEmailX" name="correoUsuario" placeholder="Correo electrónico" required>
-        <label for="typeEmailX">*</label>
+        <input type="text" name="username" placeholder="Nombre de usuario" required>
       </div>
 
       <div>
         <p>Ingrese su contraseña*</p>
       </div>
       <div class="col-8 mx-auto">
-        <input type="password" id="typePasswordX" name="contraseñaUsuario" placeholder="Contraseña" required>
-        <label for="typePasswordX">*</label>
-      </div>
-
-      <div>
-        <p class="small mb-5 pb-lg-2">
-          <a href="#!" class="text-primary">¿Olvidaste tu contraseña?</a>
-        </p>
+        <input type="password" name="password" placeholder="Contraseña" required>
       </div>
 
       <div class="col-8 mx-auto text-center">
-        <button id="completarFormulario" type="submit">Iniciar sesión</button>
+        <button type="submit">Iniciar sesión</button>
       </div>
-
-      <p class="mt-4">¿No estás registrado? 
-        <a href="formulario.html" class="text-primary">Registrarse</a>
-      </p>
     </ul>
   </section>
 </form>
+
 </body>
 </html>

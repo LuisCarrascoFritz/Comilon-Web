@@ -1,5 +1,6 @@
 from django.urls import path
 from . import views
+from .views import admin_dashboard  
 from django.conf import settings
 from django.conf.urls.static import static
 
@@ -13,11 +14,7 @@ urlpatterns = [
     path('inicioSesion', views.inicioSesion, name='inicioSesion'),
     path('registro', views.registro, name='registro'),
     path('subirProducto', views.subirProducto, name='subirProducto'),
-
-
-
-
-
+    path('admin_dashboard/', admin_dashboard, name='admin_dashboard'),  
 ]
 
 if settings.DEBUG:  # Solo para desarrollo
