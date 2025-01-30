@@ -1,6 +1,7 @@
 from django.urls import path
 from . import views
-from .views import register
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('', views.index, name='index'),
@@ -9,11 +10,15 @@ urlpatterns = [
     path('platillos', views.platillos, name='platillos'),
     path('platillo', views.platillo, name='platillo1'),
     path('soporte', views.soporte, name='soporte'),
-    path('inicioSesion', views.soporte, name='inicioSesion'),
-    path('formulario', views.soporte, name='formulario'),
+    path('inicioSesion', views.inicioSesion, name='inicioSesion'),
+    path('registro', views.registro, name='registro'),
+    path('subirProducto', views.subirProducto, name='subirProducto'),
 
-    path('register/', register, name='register'),
+
 
 
 
 ]
+
+if settings.DEBUG:  # Solo para desarrollo
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

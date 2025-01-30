@@ -22,43 +22,19 @@
       <li><a href="inicioSesion">Inicio de sesión</a></li>
   </ul>
 </nav>
-<section class="formulario">
-  <ul class="Card col-12 mx-auto">
-        <h2>SOPORTE</h2> <img src="../static/img/soporte_png.png" alt="imagen soporte">
+<form method="POST" enctype="multipart/form-data">
+    {% csrf_token %}
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" required>
 
-    <div>
-      <p>Ingrese su correo electrónico*</p>
-    </div>
-    <div class="col-8 mx-auto">
-      <input type="email" id="correoSoporte" name="correoSoporte" placeholder="name@example.com" required>
-      <label for="correoSoporte">*</label>
-    </div>
+    <label for="descripcion">Descripción:</label>
+    <textarea id="descripcion" name="descripcion" required></textarea>
 
-    <div>
-      <p>Seleccione el motivo*</p>
-    </div>
-    <div class="col-8 mx-auto">
-      <select id="motivoSoporte" name="motivoSoporte" required>
-        <option value="" disabled selected>Seleccione una opción</option>
-        <option value="problema_tecnico">Problema Técnico</option>
-        <option value="ayuda_pedido">Ayuda con mi pedido</option>
-      </select>
-      <label for="motivoSoporte">*</label>
-    </div>
+    <label for="precio">Precio:</label>
+    <input type="number" id="precio" name="precio" step="0.01" required>
 
-    <div>
-      <p>Describa el problema*</p>
-    </div>
-    <div class="col-8 mx-auto">
-      <textarea id="descripcionProblema" name="descripcionProblema" placeholder="Detalle su problema aquí..." rows="3" required></textarea>
-      <label for="descripcionProblema">*</label>
-    </div>
+    <label for="imagen">Imagen:</label>
+    <input type="file" id="imagen" name="imagen" required>
 
-    <div class="col-8 mx-auto text-center mt-4">
-      <button type="submit" id="enviarSoporte">Enviar</button>
-    </div>
-  </ul>
-</section>
-</div>
-</body>
-</html>
+    <button type="submit">Guardar</button>
+</form>

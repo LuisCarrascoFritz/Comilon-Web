@@ -1,6 +1,4 @@
 from django.shortcuts import render, redirect
-from .forms import CustomUserCreationForm
-
 
 # Create your views here.
 def index(request):
@@ -27,17 +25,10 @@ def inicioSesion(request):
     context={}
     return render(request, 'restaurante/inicioSesion.html', context)
 
-def formulario(request):
+def registro(request):
     context={}
-    return render(request, 'restaurante/formulario.html', context)
+    return render(request, 'restaurante/registro.html', context)
 
-
-def register(request):
-    if request.method == 'POST':
-        form = CustomUserCreationForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect('login')  # Redirige al login después del registro
-    else:
-        form = CustomUserCreationForm()
-    return render(request, 'registro.html', {'form': form})
+def subirProducto(request):
+    context={}
+    return render(request, 'restaurante/subirProducto.html', context)
